@@ -11,7 +11,7 @@
     "angular",
     "node.js"
   ],
-  "author": "MarcinDl <marcindl@hotmail.com> (http://www.softlab.mem)",
+  "author": "MarcinDl <marcindl@hotmail.com> (http://www.softlab.me)",
   "license": "ISC",
   "dependencies": {
     "node-ical": "^0.13.0"
