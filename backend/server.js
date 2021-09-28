@@ -4,7 +4,8 @@ const app = express();
 
 app.use(cors()) 	
 app.get("/api", (req, res, next) => {
-    res.json(["Marcin","Tomasz","Michał","Wojciech"]);
+    res.json(["Ola"]);
+
 });
 
 app.listen(3000, () => {
