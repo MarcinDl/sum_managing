@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiDataService } from '../services/api-data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  wypisanieDanych:any;
+  constructor(
+    private apiData:ApiDataService
+  ) {}
 
+  ngOnInit(){
+    this.apiData.getApiData().subscribe( res => {
+
+      for (let re of Object.values(res)){
+        // console.log(re)
+        // for (let r of re){
+        //   console.log(r)
+        // }
+        this.wypisanieDanych = re;
+      }
+    })
+  }
 }
