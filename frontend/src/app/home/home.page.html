@@ -4,8 +4,9 @@
   <div id="container" style="margin-top:20px">
 
     <ul>
-      <li *ngFor="let aaa of wypisanieDanych">
-        {{aaa.summary | shortlecturename }} początek: {{aaa.start | date:'HH:mm'}} koniec: {{aaa.end | date:'HH:mm'}}
+      <li *ngFor="let aaa of lecturesSummary">
+        <!-- {{aaa.summary  }} początek: {{aaa.start | date:'HH:mm'}} koniec: {{aaa.end | date:'HH:mm'}} -->
+        {{ aaa | date:"HH:mm"}}
       </li>
     </ul>
 

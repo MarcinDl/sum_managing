@@ -8,21 +8,21 @@ import { ApiDataService } from '../services/api-data.service';
 })
 export class HomePage {
 
-  wypisanieDanych:any;
+  lecturesSummary:any = [];
   constructor(
     private apiData:ApiDataService
   ) {}
 
   ngOnInit(){
     this.apiData.getApiData().subscribe( res => {
+      console.log(res)
 
-      for (let re of Object.values(res)){
-        // console.log(re)
-        // for (let r of re){
-        //   console.log(r)
-        // }
-        this.wypisanieDanych = re;
+      for (let re in res){
+        console.log(res[re].start)
+        this.lecturesSummary.push(res[re].start)
       }
+      // this.lecturesSummary = [res];
+
     })
   }
 }
