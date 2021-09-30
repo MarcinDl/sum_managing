@@ -8,7 +8,17 @@ const iCalData = require("./ical/ical-logic")
 
 app.use(cors()) 	
 app.get("/api", (req, res, next) => {
-    res.json(iCalData);
+    // iCalData.allEvents().then( respond => {
+    //     res.json(respond)
+    // })
+
+    iCalData.allEvents().then((msg) => {
+        console.log(msg)
+        res.json(msg)
+      }).catch((msg) => {
+        console.log(msg)
+      })
+    // res.json(iCalData.allEvents());
 
 });
 

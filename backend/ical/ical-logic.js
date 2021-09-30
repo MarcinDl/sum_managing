@@ -1,33 +1,15 @@
 const ical = require('node-ical');
-const path = require('path')
 
-
-const events = ical.sync.parseFile(path.resolve('./ical/calendar-106.ics'));
-
-
-let allEvents = [];
-// loop through events and log them
-for (const event of Object.values(events)) {
-    console.log(
-        'Summary: ' + event.summary +
-        '\nStart Date: ' + event.start +
-        '\nStart Date: ' + event.end +
-        '\n'
-    );
-
-    allEvents.push({
-        'summary': event.summary, 
-        'start' : event.start, 
-        'end' : event.end }) ;
-
-    // allEvents += 
-    //    { 'Summary: ' : event.summary,
-    //     'Start Date: ' + event.start,
-    //     'Start Date: ' + event.end}
-    
-};
-
+function allEvents() {
+    return new Promise((resolve, reject) => {
+        ical.fromURL('http://www.cdism.sum.edu.pl/ics/calendar-106.ics', {}, function (err, data) {
+            console.log(data)
+            resolve(data)
+        });
+    })
+}
 
 module.exports = {
-    allEvents
+    allEvents: allEvents
 }
+
