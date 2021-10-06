@@ -15,7 +15,7 @@ Aplikacja mobilne na iOS oraz Androida do wyświetlania połączeń.
 ### Backend
 
 |   Lp. | Opis  | Status  |  
-|---|---|---|
+| ------------- | ------------- | ------------- |
 |  1.  |  Połączenie z plikami ICS | ✅ |  
 |  2. | Export do frontu |  ✅  |  
 |  3. | Wydzielenie odpowiednich danych | ❌ | 
