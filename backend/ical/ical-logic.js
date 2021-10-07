@@ -10,13 +10,20 @@ function allEvents() {
             const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
             const yyyy = today.getFullYear();
 
-            let dates;
-            today = mm + '/' + dd + '/' + yyyy;
+            let dates = [];
+            today = dd + '/' + mm + '/' + yyyy;
             for(let re in data){
-                console.log(data[re].end.toLocaleDateString())
-                dates += data[re].end.toLocaleDateString();
+                // console.log(data[re])
+                // console.log(data[re].end.toLocaleDateString())
+                // dates += today ==data[re].end.toLocaleDateString();
+                // console.log(data[re].end.toLocaleDateString())
+                if (today == data[re].end.toLocaleDateString()){
+                    
+                    dates.push(data[re].end.toLocaleDateString());
+                    // console.log("dates",dates)
+                } 
             }
-
+            // console.log(dates)
             console.log("today",today)
 
             resolve(dates)
