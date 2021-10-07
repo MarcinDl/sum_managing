@@ -4,11 +4,13 @@
   <div id="container" style="margin-top:20px">
 
     <ul>
-      <li *ngFor="let aaa of lecturesSummary">
+      <li *ngFor="let aaa of (lecturesSummary$ |async )">
         <!-- {{aaa.summary  }} początek: {{aaa.start | date:'HH:mm'}} koniec: {{aaa.end | date:'HH:mm'}} -->
-        {{ aaa | date:"HH:mm"}}
+        {{ aaa }}
       </li>
     </ul>
 
   </div>
+
+  <button (click)="clickShow()">Klik</button>
 </ion-content>
