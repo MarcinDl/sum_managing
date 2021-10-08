@@ -16,7 +16,7 @@ app.get("/api", (req, res, next) => {
         // console.log(msg)
         res.json(msg)
       }).catch((msg) => {
-        console.log("uups, coś poszło nie tak")
+        console.log("uups, coś poszło nie tak", msg)
       })
     // res.json(iCalData.allEvents());
 

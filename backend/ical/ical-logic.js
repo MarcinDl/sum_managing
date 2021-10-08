@@ -2,31 +2,36 @@ const ical = require('node-ical');
 
 function allEvents() {
     return new Promise((resolve, reject) => {
-        ical.fromURL('http://www.cdism.sum.edu.pl/ics/calendar-106.ics', {}, function (err, data) {
-            // console.log(data)
+        ical.fromURL('http://www.cdism.sum.edu.pl/ics/calendar-106.ics', {}, function (err, dataFromICS) {
             let today = new Date();
-
             const dd = String(today.getDate()).padStart(2, '0');
             const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
             const yyyy = today.getFullYear();
-
-            let dates = [];
             today = dd + '/' + mm + '/' + yyyy;
-            for(let re in data){
-                // console.log(data[re])
-                // console.log(data[re].end.toLocaleDateString())
-                // dates += today ==data[re].end.toLocaleDateString();
-                // console.log(data[re].end.toLocaleDateString())
-                if (today == data[re].end.toLocaleDateString()){
-                    
-                    dates.push(data[re].end.toLocaleDateString());
-                    // console.log("dates",dates)
+
+            let lecturesInfo = [];
+
+            for(let singleData in dataFromICS){
+                // console.log(dataFromICS[singleData])
+                if (today == dataFromICS[singleData].end.toLocaleDateString()){
+                    let singleLectureInfo = {
+                        summary: dataFromICS[singleData].summary,
+                        startDate: dataFromICS[singleData].start.toLocaleDateString(),
+                        endDate: dataFromICS[singleData].end.toLocaleDateString(),
+                        startTime: dataFromICS[singleData].start.getHours() + ":" + dataFromICS[singleData].start.getMinutes(),
+                        endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
+                        openingHours: dataFromICS[singleData].start.getHours(),
+                        openingMinutes: dataFromICS[singleData].start.getMinutes(),
+                        closingHours: dataFromICS[singleData].end.getHours(),
+                        closingMinutes: dataFromICS[singleData].end.getMinutes()
+                    }
+                    lecturesInfo.push(singleLectureInfo)
+                    console.log(lecturesInfo)
                 } 
             }
-            // console.log(dates)
             console.log("today",today)
 
-            resolve(dates)
+            resolve(lecturesInfo)
         });
     })
 }
