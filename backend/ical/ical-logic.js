@@ -1,14 +1,21 @@
 const ical = require('node-ical');
 
 const room106 = "http://www.cdism.sum.edu.pl/ics/calendar-106.ics"
+const room107 = "http://www.cdism.sum.edu.pl/ics/calendar-107.ics"
+
+const icsLink = "http://www.cdism.sum.edu.pl/ics/calendar-";
+const icsExension = ".ics";
 
 const room = {
     firstFloor: [106,107,108,111,112,113,114,117],
-    secondFlooor: [201,204,206,208,210,211,213,219,220,221,222,223]
+    secondFloor: [201,204,206,208,210,211,213,219,220,221,222,223]
 }
+
+let firstFloorArray = [];
+let secondFloorArray = [];
 function allEvents() {
 
-    return new Promise((resolve, reject) => {
+   let neww =  new Promise((resolve, reject) => {
         ical.fromURL(room106, {}, function (err, dataFromICS) {
             let today = new Date();
             const dd = String(today.getDate()).padStart(2, '0');
@@ -28,10 +35,6 @@ function allEvents() {
                         startTime: dataFromICS[singleData].start.getHours() + ":" + dataFromICS[singleData].start.getMinutes(),
                         endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
                         room: room106.substr(-7, 3),
-                        openingHours: dataFromICS[singleData].start.getHours(),
-                        openingMinutes: dataFromICS[singleData].start.getMinutes(),
-                        closingHours: dataFromICS[singleData].end.getHours(),
-                        closingMinutes: dataFromICS[singleData].end.getMinutes()
                     }
                     lecturesInfo.push(singleLectureInfo)
                     console.log(lecturesInfo)
@@ -42,6 +45,8 @@ function allEvents() {
             resolve(lecturesInfo)
         });
     })
+
+    return Promise.all([neww])
 }
 
 module.exports = {
