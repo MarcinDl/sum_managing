@@ -2,6 +2,7 @@ const ical = require('node-ical');
 
 const room106 = "http://www.cdism.sum.edu.pl/ics/calendar-106.ics"
 const room107 = "http://www.cdism.sum.edu.pl/ics/calendar-107.ics"
+const room108 = "http://www.cdism.sum.edu.pl/ics/calendar-108.ics"
 
 const icsLink = "http://www.cdism.sum.edu.pl/ics/calendar-";
 const icsExension = ".ics";
@@ -49,7 +50,7 @@ function allEvents() {
     })
     let neww2 =  new Promise((resolve, reject) => {
 
-        ical.fromURL(room106, {}, function (err, dataFromICS) {
+        ical.fromURL(room107, {}, function (err, dataFromICS) {
             let lecturesInfo = [];
 
             for(let singleData in dataFromICS){
@@ -62,7 +63,32 @@ function allEvents() {
                         // endDate: dataFromICS[singleData].end.toLocaleDateString(),
                         startTime: dataFromICS[singleData].start.getHours() + ":" + dataFromICS[singleData].start.getMinutes(),
                         endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
-                        room: room106.substr(-7, 3),
+                        room: room107.substr(-7, 3),
+                    }
+                    lecturesInfo.push(singleLectureInfo)
+                    // console.log(lecturesInfo)
+                } 
+            }
+
+            resolve(lecturesInfo)
+        });
+    })
+    let neww3 =  new Promise((resolve, reject) => {
+
+        ical.fromURL(room108, {}, function (err, dataFromICS) {
+            let lecturesInfo = [];
+
+            for(let singleData in dataFromICS){
+                // console.log(dataFromICS[singleData])
+                if (today == dataFromICS[singleData].end.toLocaleDateString()){
+                    let singleLectureInfo = {
+                        summary: dataFromICS[singleData].summary,
+                        date: dataFromICS[singleData].start.toLocaleDateString(),
+                        // startDate: dataFromICS[singleData].start.toLocaleDateString(),
+                        // endDate: dataFromICS[singleData].end.toLocaleDateString(),
+                        startTime: dataFromICS[singleData].start.getHours() + ":" + dataFromICS[singleData].start.getMinutes(),
+                        endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
+                        room: room108.substr(-7, 3),
                     }
                     lecturesInfo.push(singleLectureInfo)
                     // console.log(lecturesInfo)
@@ -73,7 +99,7 @@ function allEvents() {
         });
     })
 
-    return Promise.all([neww, neww2])
+    return Promise.all([neww, neww2, neww3])
 }
 
 module.exports = {
