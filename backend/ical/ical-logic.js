@@ -32,7 +32,7 @@ function allEvents() {
                         let singleLectureInfo = {
                             summary: dataFromICS[singleData].summary,
                             date: dataFromICS[singleData].start.toLocaleDateString(),
-                            startTime: dataFromICS[singleData].start.getHours() + ":" + dataFromICS[singleData].start.getMinutes(),
+                            startTime: dataFromICS[singleData].start.getHours() + ":" + (dataFromICS[singleData].start.getMinutes()<10 ? '0' : '') + (dataFromICS[singleData].start.getMinutes()) ,
                             endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
                             room: roomNumber,
                         }
