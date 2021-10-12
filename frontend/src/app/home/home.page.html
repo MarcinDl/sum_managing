@@ -7,11 +7,15 @@
       <ion-col size=1>Koniec</ion-col>
       <ion-col class="ion-text-center" size=1>Sala</ion-col>
     </ion-row>
+
     <ion-row *ngFor="let singleInfo of (lecturesSummary$ |async )">
-      <!-- <ion-col size=9>{{singleInfo.summary}}</ion-col>
-      <ion-col size=1>{{singleInfo.startTime}}</ion-col>
-      <ion-col size=1>{{singleInfo.endTime}}</ion-col>
-      <ion-col size=1>{{singleInfo.room}}</ion-col> -->
+      <ng-container *ngIf="(actualTime < singleInfo.endTime) && (actualTime > singleInfo.startTime)">
+        <ion-col size=9>{{singleInfo.summary}}</ion-col>
+        <ion-col size=1>{{singleInfo.startTime}}</ion-col>
+        <ion-col size=1>{{singleInfo.endTime}}</ion-col>
+        <ion-col size=1>{{singleInfo.room}}</ion-col>
+      </ng-container>
+
     </ion-row>
   </ion-grid>
 </ion-content>
