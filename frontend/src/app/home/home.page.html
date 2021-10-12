@@ -2,20 +2,32 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-text-center" size=9>Opis</ion-col>
-      <ion-col size=1>Start</ion-col>
-      <ion-col size=1>Koniec</ion-col>
-      <ion-col class="ion-text-center" size=1>Sala</ion-col>
+      <ion-col class="ion-text-center" size=6>Opis</ion-col>
+      <ion-col size=2>Start</ion-col>
+      <ion-col size=2>Koniec</ion-col>
+      <ion-col class="ion-text-center" size=2>Sala</ion-col>
     </ion-row>
 
     <ion-row *ngFor="let singleInfo of (lecturesSummary$ |async )">
       <ng-container *ngIf="(actualTime < singleInfo.endTime) && (actualTime > singleInfo.startTime)">
-        <ion-col size=9>{{singleInfo.summary}}</ion-col>
-        <ion-col size=1>{{singleInfo.startTime}}</ion-col>
-        <ion-col size=1>{{singleInfo.endTime}}</ion-col>
-        <ion-col size=1>{{singleInfo.room}}</ion-col>
+        <ion-col size=6>{{singleInfo.summary}}</ion-col>
+        <ion-col size=2>{{singleInfo.startTime}}</ion-col>
+        <ion-col size=2>{{singleInfo.endTime}}</ion-col>
+        <ion-col size=2>{{singleInfo.room}}</ion-col>
       </ng-container>
 
     </ion-row>
   </ion-grid>
+
+  <!-- <ion-button (click)="openPane()">
+    open pane
+  </ion-button> -->
+
+  <div class="cupertino-pane">
+    <h1>Układ sal</h1>
+    <div>
+      Tu będzie układ sal
+
+    </div>
+  </div>
 </ion-content>
