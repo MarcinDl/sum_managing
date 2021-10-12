@@ -25,11 +25,11 @@ export class HomePage {
 
 
   ngOnInit(){
-    this.lecturesSummary$ = this.http.get<any>("http://localhost:3000/api").pipe(map( result => result.sort(this.sortByName)))
+    this.lecturesSummary$ = this.http.get<any>("http://localhost:3000/api").pipe(map( result => result.sort(this.sortByStartime)))
     console.log("this.lecuresSummary$",this.lecturesSummary$)
   }
 
-  sortByName = (a, b) => {
+  sortByStartime = (a, b) => {
     const nameA = a.startTime;
     const nameB = b.startTime;
     return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
