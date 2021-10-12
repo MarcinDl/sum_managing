@@ -32,8 +32,8 @@ function allEvents() {
                         let singleLectureInfo = {
                             summary: dataFromICS[singleData].summary,
                             date: dataFromICS[singleData].start.toLocaleDateString(),
-                            startTime: dataFromICS[singleData].start.getHours() + ":" + (dataFromICS[singleData].start.getMinutes()<10 ? '0' : '') + (dataFromICS[singleData].start.getMinutes()) ,
-                            endTime: dataFromICS[singleData].end.getHours() + ":" + dataFromICS[singleData].end.getMinutes(),
+                            startTime: (dataFromICS[singleData].start.getHours()<10 ? '0' : '') + dataFromICS[singleData].start.getHours() + ":" + (dataFromICS[singleData].start.getMinutes()<10 ? '0' : '') + (dataFromICS[singleData].start.getMinutes()) ,
+                            endTime: (dataFromICS[singleData].end.getHours()<10 ? '0' : '') + dataFromICS[singleData].end.getHours() + ":" + (dataFromICS[singleData].end.getMinutes()<10 ? '0' : '') + (dataFromICS[singleData].end.getMinutes()) ,
                             room: roomNumber,
                         }
                         lecturesInfo.push(singleLectureInfo)
