@@ -5,6 +5,7 @@ import { map,  } from 'rxjs/operators';
 
 
 import { CupertinoPane, CupertinoSettings } from "cupertino-pane";
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -39,7 +40,8 @@ export class HomePage {
   roomsNumberCDiSM = [106,107,108,111,112,113,117];
 
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+    private menu:MenuController
   ) {
     let today = new Date();
 
@@ -132,14 +134,19 @@ export class HomePage {
     const myPane = new CupertinoPane(
       ".cupertino-pane", // Pane container selector
       {
-        parentElement: "ion-content", // Parent container
+        parentElement: ".main-content", // Parent container
         breaks: {
-          middle: { enabled: true, height: 100 },
-          bottom: { enabled: true, height: 20 }
+          middle: { enabled: true, height: 200 },
+          bottom: { enabled: true, height: 99 }
         },
-        bottomClose: true
+        bottomClose: false
       }
     );
     myPane.present({ animate: true });
+  }
+
+  openMenu(){
+    // this.menu.enable(true, 'custosm');
+    this.menu.open('custom')
   }
 }

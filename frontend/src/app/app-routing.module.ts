@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'cdism',
+    loadChildren: () => import('./pages/cdism/cdism.module').then( m => m.CdismPageModule)
+  },
+  {
+    path: 'wnoz',
+    loadChildren: () => import('./pages/wnoz/wnoz.module').then( m => m.WnozPageModule)
+  },
 ];
 
 @NgModule({

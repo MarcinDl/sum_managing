@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ShortlecturenamePipe } from '../pipes/shortlecturename.pipe';
-
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 @NgModule({
   imports: [
@@ -14,7 +14,9 @@ import { ShortlecturenamePipe } from '../pipes/shortlecturename.pipe';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+    SharedModuleModule
   ],
-  declarations: [HomePage, ShortlecturenamePipe]
+  declarations: [HomePage, ShortlecturenamePipe],
+  exports: []
 })
 export class HomePageModule {}
