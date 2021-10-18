@@ -1,0 +1,10 @@
+{
+  "TITLE": "Hello po niemiecku",
+  "HOME":  {
+    "title": "deutsch tytuł"
+  },
+  "TITLE_2": "Hello {{value}}",
+  "description": "Ooohh .... did you just translate this text ?",
+  "data": {
+  "name": "My name is {{name_value}}"}
+}

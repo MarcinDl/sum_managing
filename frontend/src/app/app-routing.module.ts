@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'wnoz',
     loadChildren: () => import('./pages/wnoz/wnoz.module').then( m => m.WnozPageModule)
   },
+  {
+    path: 'language',
+    loadChildren: () => import('./pages/settings/language/language.module').then( m => m.LanguagePageModule)
+  },
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { ShortlecturenamePipe } from '../pipes/shortlecturename.pipe';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModuleModule
+    SharedModuleModule,
+    TranslateModule
   ],
   declarations: [HomePage, ShortlecturenamePipe],
   exports: []
