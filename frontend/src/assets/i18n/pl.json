@@ -1,10 +1,13 @@
 {
-  "TITLE": "Hello po polsku",
+  "title": "Plan zajęć",
+  "description": "Opis",
+  "start": "Start",
+  "end": "Koniec",
+  "room": "Sala",
   "HOME":  {
     "title": "jakiś tytuł"
   },
   "TITLE_2": "Hello {{value}}",
-  "description": "Ooohh .... did you just translate this text ?",
   "data": {
   "name": "My name is {{name_value}}"}
 }

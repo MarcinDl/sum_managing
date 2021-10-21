@@ -1,10 +1,13 @@
 {
-  "TITLE": "Hello po ang",
+  "title": "Schedule",
+  "description": "Description",
+  "start": "Start",
+  "end": "End",
+  "room": "Room",
   "HOME":  {
     "title": "english tytuł"
   },
   "TITLE_2": "Hello {{value}}",
-  "description": "Ooohh .... did you just translate this text ?",
   "data": {
   "name": "My name is {{name_value}}"}
 }

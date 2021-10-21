@@ -1,10 +1,13 @@
 {
-  "TITLE": "Hello po niemiecku",
+  "title": "Zeitlicher Ablauf",
+  "description": "Bezeichnung",
+  "start": "Start",
+  "end": "Ende",
+  "room": "Saal",
   "HOME":  {
     "title": "deutsch tytuł"
   },
   "TITLE_2": "Hello {{value}}",
-  "description": "Ooohh .... did you just translate this text ?",
   "data": {
   "name": "My name is {{name_value}}"}
 }
