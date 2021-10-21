@@ -13,16 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'cdism',
-    loadChildren: () => import('./pages/cdism/cdism.module').then( m => m.CdismPageModule)
+    loadChildren: () => import('./pages/buildings/cdism/cdism.module').then( m => m.CdismPageModule)
   },
   {
     path: 'wnoz',
-    loadChildren: () => import('./pages/wnoz/wnoz.module').then( m => m.WnozPageModule)
+    loadChildren: () => import('./pages/buildings/wnoz/wnoz.module').then( m => m.WnozPageModule)
   },
   {
     path: 'language',
     loadChildren: () => import('./pages/settings/language/language.module').then( m => m.LanguagePageModule)
   },
+  {
+    path: 'default',
+    loadChildren: () => import('./pages/settings/default/default.module').then( m => m.DefaultPageModule)
+  },
+  {
+    path: 'wcag',
+    loadChildren: () => import('./pages/settings/wcag/wcag.module').then( m => m.WcagPageModule)
+  }
 ];
 
 @NgModule({
