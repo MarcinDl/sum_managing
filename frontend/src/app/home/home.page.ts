@@ -48,6 +48,7 @@ export class HomePage {
     let hh = String(today.getHours()).padStart(2, '0');
     let mm = String(today.getMinutes()).padStart(2, '0');
     this.actualTime = hh+":"+mm;
+    this.actualTime = "10:00";
   }
   ngOnInit(){
     this.lecturesSummary$ = this.http.get<any>("http://localhost:3000/api").pipe(map( result => result.sort(this.sortByStartime)))
@@ -56,7 +57,7 @@ export class HomePage {
         console.log(lectur)
         if (this.actualTime > lectur.startTime && this.actualTime < lectur.endTime) {
 
-          console.log("lectur.startTime", lectur.startTime,"lectur.endTime", lectur.endTime, "lectur.room", lectur.room)
+          // console.log("lectur.startTime", lectur.startTime,"lectur.endTime", lectur.endTime, "lectur.room", lectur.room)
 
           if (lectur.room == 106){
             this.room106 = true;
@@ -134,9 +135,9 @@ export class HomePage {
     const myPane = new CupertinoPane(
       ".cupertino-pane", // Pane container selector
       {
-        parentElement: ".main-content", // Parent container
+        parentElement: ".pan", // Parent container
         breaks: {
-          middle: { enabled: true, height: 200 },
+          middle: { enabled: true, height: 100 },
           bottom: { enabled: true, height: 99 }
         },
         bottomClose: false
@@ -146,7 +147,7 @@ export class HomePage {
   }
 
   openMenu(){
-    // this.menu.enable(true, 'custosm');
+    this.menu.enable(true, 'custom');
     this.menu.open('custom')
   }
 }
