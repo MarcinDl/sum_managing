@@ -29,7 +29,6 @@ export class AppComponent {
   }
 
   openMenu(){
-    // alert("ddd")
     this.menu.enable(true, 'custom');
     this.menu.open('custom')
   }

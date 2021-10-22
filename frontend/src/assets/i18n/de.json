@@ -9,10 +9,11 @@
   "settings": "die Einstellungen",
   "cdism": "CDiSM",
   "wnoz": "WNoZ",
-  "HOME":  {
-    "title": "deutsch tytuł"
-  },
-  "TITLE_2": "Hello {{value}}",
-  "data": {
-  "name": "My name is {{name_value}}"}
+  "buildings": "Gebäude",
+  "language": "Sprache",
+  "default": "Standardeinstellung",
+  "about": "Über die Bewerbung",
+  "rooms_layout": "Die Aufteilung der Räume",
+  "ground_floor": "Erdgeschoss",
+  "first_floor": "erste Stock"
 }

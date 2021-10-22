@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -7,28 +7,27 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
 
   constructor(
-    private translate:TranslateService
+    private translate:TranslateService,
+
   ) { }
 
 
   selected = '';
-
+  initialLanguage = localStorage.getItem("choosenLang") || this.translate.getBrowserLang() ;
   setInitialAppLanguage(){
-    let language = this.translate.getBrowserLang();
-    this.translate.setDefaultLang(language);
+
+    if (this.proba == ''){
+      this.translate.setDefaultLang(this.initialLanguage);
+    } else {
+      this.translate.setDefaultLang("choosenLang")
+    }
   }
 
-  getLanguages(){
-    return [
-      { text: 'Polish', value: 'pl'},
-      { text: 'English', value: 'en'},
-      { text: 'German', value: 'de'},
-      { text: 'Ukrainian', value: 'ukr'},
-    ]
-  }
-
+  proba:any = '';
   setLanguage(lng){
     this.translate.use(lng);
-    this.selected  = lng;
+    localStorage.setItem("choosenLang",lng)
   }
+
+
 }

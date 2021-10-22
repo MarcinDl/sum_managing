@@ -9,10 +9,11 @@
   "settings": "Ustawienia",
   "cdism": "CDiSM",
   "wnoz": "WNoZ",
-  "HOME":  {
-    "title": "jakiś tytuł"
-  },
-  "TITLE_2": "Hello {{value}}",
-  "data": {
-  "name": "My name is {{name_value}}"}
+  "buildings": "Budynki",
+  "language": "Język",
+  "default": "Domyślne",
+  "about": "O aplikacji",
+  "rooms_layout": "Układ sal",
+  "ground_floor": "Parter",
+  "first_floor": "Pierwsze piętro"
 }
