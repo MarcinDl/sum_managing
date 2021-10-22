@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { LanguagePageRoutingModule } from './language-routing.module';
 
 import { LanguagePage } from './language.page';
+import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LanguagePageRoutingModule
+    LanguagePageRoutingModule,
+    SharedModuleModule,
+    TranslateModule
   ],
   declarations: [LanguagePage]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-default',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private menu:MenuController
+  ) { }
 
   ngOnInit() {
+  }
+
+  openMenu(){
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom')
   }
 
 }

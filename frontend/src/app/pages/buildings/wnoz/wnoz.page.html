@@ -1,9 +1,20 @@
-<ion-header>
+<!--
+<ion-header style="height: 55px;">
   <ion-toolbar>
-    <ion-title>wnoz</ion-title>
+    <ion-title>{{ 'wnoz' | translate }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<app-menu></app-menu>
+<ion-router-outlet id="mainMenuRouter"></ion-router-outlet> -->
+<ion-content [fullscreen]="true">
+  Treść
 </ion-content>
+
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-wcag',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WcagPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private menu:MenuController
+  ) { }
 
   ngOnInit() {
   }
 
+  openMenu(){
+    alert('dds')
+    // this.menu.enable(true, 'custom');
+    this.menu.open('custom')
+  }
+
+  ionViewWillLeave(){
+    this.menu.close('custom');
+  }
 }

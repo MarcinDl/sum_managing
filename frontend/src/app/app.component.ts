@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { LanguageService } from './services/language.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { LanguageService } from './services/language.service';
 export class AppComponent {
   constructor(
     private platform:Platform,
-    private languageService:LanguageService
+    private languageService:LanguageService,
+    private menu:MenuController
   ) {
     this.initializeApp();
   }
@@ -20,5 +22,18 @@ export class AppComponent {
       this.languageService.setInitialAppLanguage();
     })
   }
+
+
+
+  ngOnInit() {
+  }
+
+  openMenu(){
+    // alert("ddd")
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom')
+  }
+
+
 
 }

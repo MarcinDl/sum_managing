@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { CdismPageRoutingModule } from './cdism-routing.module';
 
 import { CdismPage } from './cdism.page';
+import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CdismPageRoutingModule
+    CdismPageRoutingModule,
+    SharedModuleModule,
+    TranslateModule
   ],
   declarations: [CdismPage]
 })

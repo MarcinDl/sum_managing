@@ -16,6 +16,17 @@ export class MenuComponent implements OnInit {
 
   goToCDiSM(){
     this.router.navigate(['cdism'])
-
+  }
+  goToWNoZ(){
+    this.router.navigate(['wnoz'])
+  }
+  goToLanguage(){
+    this.router.navigate(['language'])
+  }
+  goToWCAG(){
+    this.router.navigate(['wcag'])
+  }
+  goToDefault(){
+    this.router.navigate(['default'])
   }
 }

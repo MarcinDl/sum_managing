@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cdism',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CdismPage implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private menu:MenuController
+  ) { }
 
   ngOnInit() {
+  }
+
+  openMenu(){
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom')
   }
 
 }

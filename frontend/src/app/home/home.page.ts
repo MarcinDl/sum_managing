@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map,  } from 'rxjs/operators';
-
-
 import { CupertinoPane, CupertinoSettings } from "cupertino-pane";
 import { MenuController } from '@ionic/angular';
 
