@@ -4,6 +4,11 @@
   "start": "Start",
   "end": "Ende",
   "room": "Saal",
+  "wcag": "WCAG",
+  "languages": "Sprachauswahl",
+  "settings": "die Einstellungen",
+  "cdism": "CDiSM",
+  "wnoz": "WNoZ",
   "HOME":  {
     "title": "deutsch tytuł"
   },

@@ -4,6 +4,11 @@
   "start": "Start",
   "end": "Koniec",
   "room": "Sala",
+  "wcag": "WCAG",
+  "languages": "Wybór języka",
+  "settings": "Ustawienia",
+  "cdism": "CDiSM",
+  "wnoz": "WNoZ",
   "HOME":  {
     "title": "jakiś tytuł"
   },
